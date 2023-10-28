@@ -1,0 +1,9 @@
+{
+    "method": "GET",
+    "path": "/invoice/history",
+    "handler": "invoice.getInvoiceHistory",
+    "config": {
+      "policies": []
+    }
+  }
+   

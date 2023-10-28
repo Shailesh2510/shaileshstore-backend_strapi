@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: strapi
+    env: node
+    plan: free
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
+    healthCheckPath: /_health
+    autoDeploy: false
+    envVars:
+      - key: NODE_VERSION
+        value: 14.x
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_FILENAME
+        value: .tmp/data.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: APP_KEYS
+        generateValue: true
